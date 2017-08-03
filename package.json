@@ -21,8 +21,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "test --coverage"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
