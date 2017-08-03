@@ -18,16 +18,29 @@ const fizzBuzz = (start, end) => {
   return arr;
 };
 
+const report = mapped => (
+  mapped.reduce((memo, i) => {
+    if (typeof i === 'string') {
+      return { ...memo, [i]: memo[i] ? memo[i] + 1 : 1 };
+    }
+    return { ...memo, integer: memo.integer ? memo.integer + 1 : 1 };
+  }, {})
+);
+
 describe('fizz buzz', () => {
   it('is a function', () => {
     expect(typeof fizzBuzz).toBe('function');
   });
 
-  it('fizzes, buzzes, fizzbuzzes and luckies', () => {
-    const mapped = [1, 2, 'lucky', 4, 'buzz', 'fizz', 7, 8, 'fizz', 'buzz', 11, 'fizz', 'lucky', 14, 'fizzbuzz', 16, 17, 'fizz', 19, 'buzz'];
-    const mappedString = '1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz';
+  it('reports fizzes, buzzes, fizzbuzzes, luckies and integers', () => {
+    const mapped = fizzBuzz(1, 20);
 
-    expect(fizzBuzz(1, 20)).toEqual(mapped);
-    expect(fizzBuzz(1, 20).join(' ')).toEqual(mappedString);
+    expect(report(mapped)).toEqual({
+      fizz: 4,
+      buzz: 3,
+      fizzbuzz: 1,
+      lucky: 2,
+      integer: 10,
+    });
   });
 });
