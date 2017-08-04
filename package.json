@@ -1,0 +1,34 @@
+{
+  "name": "es6-test-shell",
+  "version": "0.0.0",
+  "description": "Drop in **/*.test.js files to test them without setting up a new project or using an existing one",
+  "author": "Gavin Boulton <gavboulton@gmail.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavboulton/es6-test-shell"
+  },
+  "keywords": [
+    "es6",
+    "test",
+    "jest"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "test --coverage"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "jest": "^20.0.4"
+  }
+}
